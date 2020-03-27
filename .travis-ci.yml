@@ -1,4 +1,0 @@
-langage: maven
-job1: 
-  script:
-    - mvn -version
