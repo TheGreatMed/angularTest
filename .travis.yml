@@ -1,6 +1,6 @@
 langage: java
 before_script:
-  - npm install -g @angular/cli@8
+  - npm install -g @angular/cli
 job1: 
   script:
     - cd angular-crud
