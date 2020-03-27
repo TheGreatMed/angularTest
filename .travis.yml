@@ -4,9 +4,9 @@ node_js:
 before_script:
   - npm install -g @angular/cli@8
 stages:
-   - clean 
-   - install
-   - angular_b
+   - name: clean 
+   - name: install
+   - name: angular_b
 clean:
   stage: clean
   script:
