@@ -1,10 +1,11 @@
-langage: node_js
-node_js:
-  - "10"
+langage: python
+python:
+  - "2.7"
 jobs:
   include:
     - stage: check
       script:
+        - pip install ansible
         - ansible --version
     
   
