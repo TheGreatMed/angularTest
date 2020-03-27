@@ -1,4 +1,4 @@
-langage: java
+langage: node_js
 before_script:
   - npm install -g @angular/cli
 job1: 
