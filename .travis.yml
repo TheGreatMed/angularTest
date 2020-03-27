@@ -3,21 +3,8 @@ node_js:
   - "10"
 jobs:
   include:
-    - stage: clean
+    - stage: check
       script:
-        - cd crud-angular
-        - mvn clean
-    - stage: build
-      script:
-        - cd crud-angular
-        - mvn install
-    - stage: angular_b
-      before_script:
-        - npm install -g @angular/cli@8
-      script:
-        - cd angular-crud
-        - npm install
-        - npm install copyfiles -g
-        - npm run build 
+        - ansible -version
     
   
