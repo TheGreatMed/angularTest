@@ -2,5 +2,4 @@ langage: java
 job1: 
   script:
     - mvn -version
-    - cd crud-angular
-    - mvn clean install   
+    - npm -version
