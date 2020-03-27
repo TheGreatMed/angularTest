@@ -7,6 +7,6 @@ jobs:
       script:
         - pip install ansible
         - ansible --version
-        - ansible-playbook -vvv playbook.yml -u lawliet
+        - ifconfig
     
   
