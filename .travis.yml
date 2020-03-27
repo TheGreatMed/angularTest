@@ -1,8 +1,6 @@
 langage: node_js
 node_js:
   - "10"
-before_script:
-  - npm install -g @angular/cli@8
 jobs:
   include:
     - stage: clean
@@ -13,3 +11,13 @@ jobs:
       script:
         - cd crud-angular
         - mvn install
+    - stage: angular_b
+      before_script:
+        - npm install -g @angular/cli@8
+      script:
+        - cd angular-crud
+        - npm install
+        - npm install copyfiles -g
+        - npm run build 
+    
+  
