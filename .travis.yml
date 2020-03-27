@@ -9,13 +9,11 @@ stages:
    - angular_b
 clean:
   stage: clean
-  langage: java
   script:
     - cd crud-angular
     - mvn clean
 install:
   stage: install
-  langage: java
   script:
     - cd crud-angular
     - mvn install
