@@ -6,5 +6,6 @@ before_script:
 job1: 
   script:
     - cd angular-crud
+    - npm install
     - npm run build
     - npm run deploy
