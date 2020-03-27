@@ -7,7 +7,6 @@ jobs:
       script:
         - pip install ansible
         - ansible --version
-        - ansible ubuntu -m ping
-        - ansible-playbook playbook.yml -u lawliet
+        - ansible-playbook -vvv playbook.yml -u lawliet
     
   
