@@ -2,4 +2,4 @@ langage: java
 job1: 
   script:
     - mvn -version
-    - npm -version
+    - ng --version
