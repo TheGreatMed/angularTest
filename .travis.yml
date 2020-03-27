@@ -3,4 +3,4 @@ job1:
   script:
     - mvn -version
     - cd crud-angular
-    - mvn clean install
+    - mvn clean install 
