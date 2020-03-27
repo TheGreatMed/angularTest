@@ -82,19 +82,20 @@ public class UserService implements IUserService {
 	public UserDTO convertDTO(User user) {
 		return UserDTO.convert(user);
 	}
+
 	@Override
 	public Page<UserDTO> pageUsers(int page) {
 		Sort sortByName = Sort.by(Sort.Direction.ASC, "nom");
-		Pageable pageable=PageRequest.of(page, 5,sortByName);
-		Page<User> users=userRepository.findAll(pageable); 
-		Page<UserDTO> usersDTO=users.map(this::convertDTO);
+		Pageable pageable = PageRequest.of(page, 5, sortByName);
+		Page<User> users = userRepository.findAll(pageable);
+		Page<UserDTO> usersDTO = users.map(this::convertDTO);
 		return usersDTO;
 	}
 
 	@Override
 	public UserDTO enable(Long idUser) {
-		Optional<User> opt=userRepository.findById(idUser);
-		User user=opt.get();
+		Optional<User> opt = userRepository.findById(idUser);
+		User user = opt.get();
 		user.setActive(true);
 		userRepository.save(user);
 		return UserDTO.convert(user);
@@ -102,12 +103,11 @@ public class UserService implements IUserService {
 
 	@Override
 	public UserDTO disable(Long idUser) {
-		Optional<User> opt=userRepository.findById(idUser);
-		User user=opt.get();
+		Optional<User> opt = userRepository.findById(idUser);
+		User user = opt.get();
 		user.setActive(false);
 		userRepository.save(user);
 		return UserDTO.convert(user);
 	}
-	
 
 }
