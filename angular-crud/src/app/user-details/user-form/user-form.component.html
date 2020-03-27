@@ -1,0 +1,52 @@
+<div class="card" >
+        <div class="card-header bg-info">
+          <h3 class="text-light">User Form</h3>
+        </div>
+        <div class="card-body">
+           <form [formGroup]="userService.form" (ngSubmit)="submitForm(); restForm()" autocomplete="off" >
+                <input type="hidden" formControlName="idUser"  >
+                <div class="form-group">
+                        <label for="Nom">Nom</label>
+                        <input type="text" class="form-control" 
+                         formControlName="nom" [ngClass]="{'red-border-class': userService.form.controls['nom'].errors && nom.touched }"  >
+                         <span class="text-danger" *ngIf="userService.form.controls.nom.errors?.required &&(nom.touched )">champs de nom est vide</span>
+                      </div>
+                      <div class="form-group">
+                        <label for="Prenom">Prenom</label>
+                        <input type="text" class="form-control" formControlName="prenom" 
+                        [ngClass]="{'red-border-class': userService.form.controls['prenom'].errors && prenom.touched }">
+                        <span class="text-danger" 
+                        *ngIf="userService.form.controls['prenom'].errors?.required &&(prenom.touched )">champs de prenom est vide</span>
+                      </div>
+                      <div class="form-group">
+                            <label for="Email">Email Adress</label>
+                            <div class="input-group-prepend">
+                                    <span class="input-group-text" >@</span>
+                            <input type="email" class="form-control" #box formControlName="email" (keyup)="onWrite(box.value)"
+                            [ngClass]="{'red-border-class': userService.form.controls['email'].errors && email.touched }" >
+                            </div>
+                          
+                            <span class="text-danger" 
+                            *ngIf="userService.form.controls['email'].errors?.required &&(email.touched )">
+                            champs d'email est vide</span>
+                            <span class="text-danger" 
+                            *ngIf="userService.form.controls['email'].errors?.email &&(email.touched )">
+                            email pattern incorrect</span>
+                            <span class="text-danger" 
+                            *ngIf="isExist">
+                            cet email est deja existe</span>
+                      </div>
+                     <div class="form-group">
+                      <button   class="btn btn-lg btn-block btn-success" *ngIf="userService.NotUpdate" [disabled]="userService.form.invalid">Add User</button>
+                      <button  class="btn  btn-block btn-lg btn-primary"  *ngIf="!userService.NotUpdate" [disabled]="userService.form.invalid" >
+                            Edit User</button> 
+                     </div>
+                      
+            </form>
+            <button class="btn btn-lg btn-block btn-secondary" (click)="restForm()">Reset</button>
+        </div>
+        <br><br><br>
+        <div class="card-footer bg-info">
+              <br>
+        </div>
+</div>

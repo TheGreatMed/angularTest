@@ -1,0 +1,14 @@
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <a href="#" class="navbar-brand text-light"><h3>Angular Test</h3></a>
+        <a [routerLink]="'/users'" class="text-light" routerLinkActive="active"> User Registration</a>
+    </div>
+</nav>
+<br>
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+    <button *ngIf="show" (click)="road()"class="btn btn-success">direction to users</button>
+</div>
+

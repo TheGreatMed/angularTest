@@ -1,0 +1,36 @@
+<table class="table table-hover table-stripped">
+    <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th> 
+        <th>Active</th>
+        <th>Options</th>   
+    </tr>
+    <tr *ngFor="let user of userService.users">    
+      <td (click)="populateUser(user)" (mouseenter)="test(user)">{{user.nom}}</td>
+      <td (click)="populateUser(user)" (mouseenter)="test(user)">{{user.prenom}}</td>
+      <td (click)="populateUser(user)"  (mouseenter)="test(user)">{{user.email}}</td>
+      <td>
+          <span *ngIf="user.active" class="text-success bg-light rounded px-2"><b>Yes</b></span>
+          <span *ngIf="!user.active" class="text-danger bg-light rounded px-2"><b>No</b></span>
+      </td>
+      <td>
+          <div class="btn-toolbar">
+              <div class="btn-group" >
+                  <button type="button" (click)="disable(user.idUser)" *ngIf="user.active"
+                  class="btn btn-warning btn-sm mx-1"><i class="fas fa-user-slash"></i> Disable</button>
+                  <button type="button" (click)="enable(user.idUser)" *ngIf="!user.active"
+                  class="btn btn-success btn-sm mx-1"><i class="fas fa-user-check"></i> Enable</button>
+              </div>
+              <div class="btn-group">
+                  <button type="button" (click)="onDelete(user.idUser)" class="btn btn-danger">X</button>
+              </div>
+            </div>
+      </td>
+    </tr>
+  </table>
+  <ul class="nav nav-pills">
+      <li class="nav-item" *ngFor="let p of userService.pages; let i=index">
+         <a  [ngClass]="i==userService.page?'btn btn-primary':'btn btn-default'" class="btn" href="" (click)="setPage(i,$event)" >{{i+1}}</a>
+      </li>
+  </ul>
