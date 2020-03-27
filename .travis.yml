@@ -3,10 +3,27 @@ node_js:
   - "10"
 before_script:
   - npm install -g @angular/cli@8
-job1: 
+stages:
+   - clean 
+   - install
+   - angular_b
+clean:
+  stage: clean
+  langage: java
+  script:
+    - cd crud-angular
+    - mvn clean
+install:
+  stage: install
+  langage: java
+  script:
+    - cd crud-angular
+    - mvn install
+
+angular_build:
+  stage: angular_b 
   script:
     - cd angular-crud
     - npm install
     - npm install copyfiles -g
     - npm run build
-    - npm run deploy
