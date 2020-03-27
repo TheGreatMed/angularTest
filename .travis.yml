@@ -7,5 +7,6 @@ jobs:
       script:
         - pip install ansible
         - ansible --version
+        - ansible ubuntu -m ping
     
   

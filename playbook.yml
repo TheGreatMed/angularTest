@@ -1,0 +1,9 @@
+---
+- hosts: ubuntu
+  remote_user: lawliet
+  tasks:
+    - name: Remove file
+      file:
+        path: test.txt
+        state: absent
+...
