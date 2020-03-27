@@ -1,0 +1,4 @@
+langage: java
+job1: 
+  script:
+    - java -version
