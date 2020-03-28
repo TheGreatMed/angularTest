@@ -4,12 +4,7 @@ node_js:
 jobs:
   include:
     - stage: deploy
-      deploy:
-        provider: heroku
-        api-key:
-           secure: $HEROKU_API_KEY
-        app: crud-angular
-        on: 
-           repo: TheGreatMed/angularTest
+      script:
+        - mvn heroku:deploy
     
   
