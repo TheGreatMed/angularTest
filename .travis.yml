@@ -1,29 +1,10 @@
-langage: node_js
-node_js:
-  - "10"
+langage: python
+python:
+  - "2.7"
 jobs:
   include:
-    - stage: clean
+    - stage: test
       script:
-        - cd crud-angular
-        - mvn clean
-    - stage: build
-      script:
-        - cd crud-angular
-        - mvn install
-    - stage: angular_b
-      before_script:
-       - npm install -g @angular/cli@8
-      script:
-        - cd angular-crud
-        - npm install
-        - npm install copyfiles -g
-        - npm run build 
-    - stage: deploy
-      deploy:
-        provider: heroku
-        api-key:
-           secure: $HEROKU_API_KEY
-        app: crud-angular
-    
-  
+        - pip install ansible
+        - ansible --version
+        - ansible ubuntu -m ping
