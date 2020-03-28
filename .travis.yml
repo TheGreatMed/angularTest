@@ -19,10 +19,5 @@ jobs:
         - npm install
         - npm install copyfiles -g
         - npm run build 
-deploy:
-  provider: heroku
-  api-key:
-    secure: $HEROKU_API_KEY
-  app: crud-angular
-    
+
   
