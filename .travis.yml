@@ -1,10 +1,15 @@
-langage: python
-python:
-  - "2.7"
+langage: node_js
+node_js:
+  - "10"
 jobs:
   include:
-    - stage: test
-      script:
-        - pip install ansible
-        - ansible --version
-        - ansible ubuntu -m ping
+    - stage: deploy
+      deploy:
+        provider: heroku
+        api-key:
+           secure: $HEROKU_API_KEY
+        app: crud-angular
+        on: 
+           repo: TheGreatMed/angularTest
+    
+  
