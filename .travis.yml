@@ -3,8 +3,17 @@ node_js:
   - "10"
 jobs:
   include:
+    - stage: clean
+      script:
+        - cd crud-angular
+        - mvn clean
+    - stage: build
+      script:
+        - cd crud-angular
+        - mvn install
     - stage: deploy
       script:
-        - mvn heroku:deploy
+        - cd crud-angular
+        - mvn heroku:deploy-war
     
   
