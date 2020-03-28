@@ -1,22 +1,12 @@
-langage: java
-jdk:
-  - "openjdk8"
+langage: node_js
+node_js:
+  - "10"
 jobs:
   include:
-    - stage: clean
+    - stage: check
       script:
-        - cd crud-angular
-        - mvn clean
-    - stage: build
-      script:
-        - cd crud-angular
-        - mvn install
-    - stage: deploy
-      deploy:
-        provider: heroku
-        api-key:
-           secure: $HEROKU_API_KEY
-        app: crud-angular 
+        - ssh -o StrictHostKeyChecking=no lawliet@192.168.32.128
+        - ls 
           
     
   
