@@ -1,5 +1,4 @@
 job:
   script:
     - cd crud-angular
-    - "cp settings.xml $HOME/.m2/settings.xml"
     - mvn clean deploy --settings $HOME/.m2/settings.xml -Dmaven.test.skip=true
