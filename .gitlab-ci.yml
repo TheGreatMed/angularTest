@@ -1,5 +1,3 @@
 job:
   script:
-    - cd crud-angular
-    - mvn clean install
-    - mvn deploy --settings settings.xml
+    - ansible-playbook playbook.yml
