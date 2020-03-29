@@ -1,4 +1,5 @@
 job:
   script:
     - cd crud-angular
-    - mvn clean deploy  -Dmaven.test.skip=true
+    - mvn clean install
+    - mvn deploy -Dmaven.test.skip=true
