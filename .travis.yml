@@ -1,7 +1,7 @@
 langage: node_js
 node_js:
   - "10"
-install:
+install:   
   - echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDpgKiDHnJu2YIy5kKtpKkZvT/iz6+
 /SnkY6TzsZf8roEXFM4Ey3xl2nswfjmq+VwB0dBHOA+TvCVM0ahBi566s2OuoYa6AzNJdwQDXsFh
 uU5/dRzv+uNnOuBkYPwhN0Et2/La3abzFbSKik2xNHA7fn800SdUWu1EVsSvIEk3j10EBf2KuVnQ
