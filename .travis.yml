@@ -1,14 +1,14 @@
 langage: node_js
 node_js:
   - "10"
+addons:
+  ssh_known_hosts:
+  - 192.168.1.82
 jobs:
   include:
     - stage: clean
       script:
-        - cd crud-angular
-        - "cp settings.xml $HOME/.m2/settings.xml"
-        - mvn clean deploy --settings $HOME/.m2/settings.xml -Dmaven.test.skip=true
-    
+        - ping 192.168.1.82
 
           
     
