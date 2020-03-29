@@ -1,3 +1,5 @@
 job:
   script:
-    - ansible-playbook playbook.yml
+    - cd angular-crud
+    - npm install
+    - npm run build
