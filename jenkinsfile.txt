@@ -1,6 +1,8 @@
 node{
-    stage('check SCM'){
-        git 'https://github.com/TheGreatMed/angularTest.git'
+    stage('Checkout') {
+        steps {
+            git branch: 'master', credentialsId: 'hp', url: 'ssh:git@github.com:TheGreatMed/angularTest.git'
+        }
     }
 
     stage('clean project'){
