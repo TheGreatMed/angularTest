@@ -9,7 +9,7 @@ node{
         sh 'cd crud-angular'
         sh 'mvn clean'
     }
-    stage('build projet'){
+    stage('build projet'){ 
         sh 'cd crud-angular'
         sh 'mvn install'
     }
