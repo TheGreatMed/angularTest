@@ -1,6 +1,6 @@
 node{
     stage('check SCM'){
-        git 'git@github.com:TheGreatMed/angularTest.git'
+        git 'https://github.com/TheGreatMed/angularTest.git'
     }
 
     stage('clean project'){
