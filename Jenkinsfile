@@ -1,8 +1,6 @@
 node{
     stage('Checkout') {
-        steps {
             git 'https://github.com/TheGreatMed/angularTest.git'  
-        }
     }
 
     stage('clean project'){
