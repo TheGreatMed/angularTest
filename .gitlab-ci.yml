@@ -2,5 +2,5 @@ job:
   script:
     - cd angular-crud
     - npm install
-    - npm install node_modules/copyfiles -g --save 
+    - npm install node_modules\copyfiles -g --save 
     - dir
