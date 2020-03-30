@@ -3,4 +3,5 @@ job:
     - cd angular-crud
     - npm install
     - npm install copyfiles -g --save
-    - copyfiles -version 
+    - cd angular-crud
+    - copyfiles -v 
