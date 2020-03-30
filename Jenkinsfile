@@ -1,7 +1,7 @@
 node{
     stage('Checkout') {
         steps {
-            git branch: 'master', credentialsId: 'hp', url: 'ssh:git@github.com:TheGreatMed/angularTest.git'  
+            git 'https://github.com/TheGreatMed/angularTest.git'  
         }
     }
 
