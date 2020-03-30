@@ -3,4 +3,4 @@ job:
     - cd angular-crud
     - npm install
     - npm install --prefix ./node_modules copyfiles -g --save 
-    - dir
+    - npm run build
