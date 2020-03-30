@@ -16,4 +16,4 @@ node{
         sh 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
     }
 }
-    
+      
