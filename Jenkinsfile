@@ -2,8 +2,8 @@ pipeline{
     agent any
     def remote = [:]
             remote.name = 'lawliet'
-            remote.host = 'lawliet@192.168.32.128'
-            remote.user = 'lawliet'
+            remote.host = '192.168.32.128'
+            remote.user = 'root'
             remote.password = 'L.lawliet'
    stages{
         stage('Checkout') {
