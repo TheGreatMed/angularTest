@@ -1,5 +1,10 @@
 pipeline{
     agent any
+    def remote = [:]
+            remote.name = 'lawliet'
+            remote.host = 'lawliet@192.168.32.128'
+            remote.user = 'lawliet'
+            remote.password = 'L.lawliet'
    stages{
         stage('Checkout') {
             steps{
@@ -9,36 +14,10 @@ pipeline{
    
     stage('clean project'){
        steps{  
-           dir('crud-angular'){
-                bat 'mvn clean'
-              }
+            sshCommand remote: remote, command: "ls"           
         }
        }
-       stage('clean build'){
-       steps{  
-           dir('crud-angular'){
-                bat 'mvn install'
-            }
-        }
-       }
-       stage('clean-build-angular'){
-           steps{
-               dir('angular-crud'){
-               bat 'npm install'
-               bat 'npm run build'
-           }
-           }
-       }
-       stage('clean deploy'){
-       steps{  
-           dir('crud-angular'){
-                bat 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
-                dir('target'){
-                    bat 'copy crud.war C:\\apache-tomcat-9.0.31\\webapps\\'
-                }
-            }
-        }
-       }
+       
 
      }
   }
