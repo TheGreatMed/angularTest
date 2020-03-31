@@ -14,6 +14,6 @@ node{
     stage('deploy nexus'){  
         sh 'cd crud-angular' 
         sh 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
-    }
+    }   
 }
       
