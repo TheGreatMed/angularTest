@@ -25,7 +25,7 @@ pipeline{
            steps{
                dir('angular-crud'){
                bat 'npm install'
-               bat 'npm install copyfiles -g'
+               bat 'npm install --prefix ./node_modules copyfiles -g --save'
                bat 'npm run build'
            }
            }
