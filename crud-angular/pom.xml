@@ -13,12 +13,14 @@
 	<artifactId>angular-crud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>angular-crud</name>
+	
+	<name>crud</name>
 	<description>Demo project for Spring Boot</description>
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus-snapshots</id>
 			<url>http://192.168.1.112:8081/repository/maven-snapshots/</url>
+			 <uniqueVersion>false</uniqueVersion>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -102,9 +104,10 @@
 					</execution>
 				</executions>
 				<configuration>
-				    <finalName>crud</finalName>
 					<serverId>nexus</serverId>
 					<nexusUrl>http://192.168.1.112:8081/nexus/</nexusUrl>
+					 <file>target/crud.war</file>
+					
 					<skipStaging>true</skipStaging>
 				</configuration>
 			</plugin>
