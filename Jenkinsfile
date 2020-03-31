@@ -9,7 +9,7 @@ pipeline {
 
     stage('clean project'){
         bat 'cd crud-angular'
-        bat 'mvn clean'
+        bat 'mvn --version'
 
     }
     
