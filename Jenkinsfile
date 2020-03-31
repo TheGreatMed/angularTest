@@ -5,18 +5,17 @@ pipeline{
             steps{
                 git 'https://github.com/TheGreatMed/angularTest.git'  
             }
-    }
+        }
    dir('crud-angular'){
     stage('clean project'){
-       steps{
-           
+       steps{  
                 bat 'mvn clean'
             }
        }
 
-    }
-    }
-   }
-    
-}
+     }
+  }
+ }
+}   
+
         
