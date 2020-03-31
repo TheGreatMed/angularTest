@@ -14,28 +14,30 @@ pipeline{
               }
         }
        }
-       stage('clean buil'){
+       stage('clean build'){
        steps{  
            dir('crud-angular'){
                 bat 'mvn install'
-              }
+            }
         }
+       }
+       stage('clean-build-angular'){
+           dir('angular-crud'){
+               bat 'npm install'
+               bat 'npm install copyfiles -g'
+               bat 'npm run build'
+           }
        }
        stage('clean deploy'){
        steps{  
            dir('crud-angular'){
                 bat 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
+                dir('target'){
+                    bat 'copy crud.war C:\apache-tomcat-9.0.31\webapps'
+                }
             }
         }
        }
-
-       stage('insstal'){
-           steps{
-             dir('angular-app'){
-                 ansiblePlaybook(credentialsId: 'lawliet', inventory: 'hosts.ini', playbook: 'playbook.yml')
-             }
-           }
-       }  
 
      }
   }
