@@ -35,7 +35,7 @@ pipeline{
            dir('crud-angular'){
                 bat 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
                 dir('target'){
-                    bat 'copy crud.war C:\\apache-tomcat-9.0.31\webapps\\'
+                    bat 'copy crud.war C:\\apache-tomcat-9.0.31\\webapps\\'
                 }
             }
         }
