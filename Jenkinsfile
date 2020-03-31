@@ -5,7 +5,8 @@ node{
 
     stage('clean project'){
         bat 'cd crud-angular'
-        bat 'mvn --version'
+        bat 'dir'
+        sh 'mvn --version'
 
     }
     
