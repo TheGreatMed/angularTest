@@ -4,9 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
-    "postbuild": "npm run deploy",
-    "predeploy": "rimraf ../crud-angular/src/main/resources/static && mkdirp ../crud-angular/src/main/resources/static && npm install copyfiles -g",
+    "build": "ng build --prod --output-path=../crud-angular/src/main/resources/static",
+    "prebuild": "rimraf ../crud-angular/src/main/resources/static && mkdirp ../crud-angular/src/main/resources/static",
     "deploy": "copyfiles -f dist/** ../crud-angular/src/main/resources/static",
     "test": "ng test",
     "lint": "ng lint",
