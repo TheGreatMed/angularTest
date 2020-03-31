@@ -40,7 +40,8 @@ pipeline{
            dir('crud-angular'){
                 bat 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
             }
-             sshCommand remote: remote, command: "ls"          
+             sshCommand remote: remote, command: "cd ~/Desktop/test"
+             sshCommand remote: remote, command: "ansible-playbook playbook1.yml"          
         }
        }
 
