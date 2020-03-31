@@ -1,13 +1,18 @@
-node{
-    stage('Checkout') {
+pipeline{
+   stages{
+        stage('Checkout') {
             git 'https://github.com/TheGreatMed/angularTest.git'  
     }
 
     stage('clean project'){
-        bat 'cd crud-angular dir'
-        bat 'mvn --version'
+       steps{
+            bat 'cd crud-angular'
+            bat 'dir'
+            bat 'mvn --version'
+       }
 
     }
+   }
     
 }
         
