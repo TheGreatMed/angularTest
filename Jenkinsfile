@@ -4,15 +4,15 @@ node{
     }
 
     stage('clean project'){
-        sh 'cd crud-angular'
+        bat 'cd crud-angular'
         sh 'mvn clean'
     }
     stage('build projet'){ 
-        sh 'cd crud-angular'
+        bat 'cd crud-angular'
         sh 'mvn install'
     }
     stage('deploy nexus'){  
-        sh 'cd crud-angular' 
+        bat 'cd crud-angular' 
         sh 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
     }   
 }
