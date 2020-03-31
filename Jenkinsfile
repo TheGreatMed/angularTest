@@ -30,7 +30,9 @@ pipeline{
        }
 
        stage('insstal'){
+           steps{
            ansiblePlaybook(credentialsId: 'lawliet ', inventory: 'hosts.ini', playbook: 'playbook.yml')
+           }
        }  
 
      }
