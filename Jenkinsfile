@@ -27,6 +27,10 @@ pipeline{
                 bat 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
             }
         }
+       }
+
+       stage('insstal'){
+           ansiblePlaybook(credentialsId: 'lawliet ', inventory: 'hosts.ini', playbook: 'playbook.yml')
        }  
 
      }

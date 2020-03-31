@@ -1,9 +1,14 @@
 ---
-- hosts: ubuntu
+- name: Get archive from Artifactory
+  hosts: ubuntu
   remote_user: lawliet
+  become: yes
   tasks:
-    - name: Remove file
-      file:
-        path: test.txt
-        state: absent
+   - name: download artifacts
+     get_url:
+      url: 'http://192.168.1.102:8089/repository/maven-snapshots/servlet/TestWar/1.0.0-SNAPSHOT/TestWar-1.0.0-SNAPSHOT.tar.gz'
+      dest: /artifacts/TestWar-1.0.0-SNAPSHOT
+      username: admin
+      password: admin123
+      timeout: 600
 ...
