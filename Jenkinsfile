@@ -1,11 +1,12 @@
 def remote = [:]
             remote.name = 'lawliet'
             remote.host = '192.168.32.128'
-            remote.user = 'lawliet'
-            remote.password = 'L.lawliet'
             remote.allowAnyHosts = true
 pipeline{
     agent any
+    withCredentials([usernamePassword(credentialsId: 'lawliet', passwordVariable: 'L.lawliet', usernameVariable: 'lawliet')]) 
+        remote.user = lawliet
+        remote.password = L.lawliet
     
    stages{
         stage('Checkout') {
