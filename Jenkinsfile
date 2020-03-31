@@ -22,10 +22,12 @@ pipeline{
         }
        }
        stage('clean-build-angular'){
-           dir('angular-crud'){
+           steps{
+               dir('angular-crud'){
                bat 'npm install'
                bat 'npm install copyfiles -g'
                bat 'npm run build'
+           }
            }
        }
        stage('clean deploy'){
@@ -33,7 +35,7 @@ pipeline{
            dir('crud-angular'){
                 bat 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
                 dir('target'){
-                    bat 'copy crud.war C:\\apache-tomcat-9.0.31\webapps\'
+                    bat 'copy crud.war C:\\apache-tomcat-9.0.31\\webapps\\'
                 }
             }
         }
