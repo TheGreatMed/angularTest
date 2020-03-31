@@ -4,7 +4,7 @@ node{
     }
 
     stage('clean project'){
-        sh 'mvn clean'
+        bat 'dir'
     }
     
 }
