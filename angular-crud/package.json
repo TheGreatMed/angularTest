@@ -6,8 +6,8 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "postbuild": "npm run deploy",
-    "predeploy": "rimraf ../crud-angular/src/main/resources/static && mkdirp ../crud-angular/src/main/resources/static",
-    "deploy": " @powershell copy dist/** ../crud-angular/src/main/resources/static",
+    "predeploy": "rimraf ../crud-angular/src/main/resources/static && mkdirp ../crud-angular/src/main/resources/static && npm install copyfiles -g",
+    "deploy": "copyfiles -f dist/** ../crud-angular/src/main/resources/static",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
