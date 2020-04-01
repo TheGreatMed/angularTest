@@ -7,14 +7,14 @@
         <th>Options</th>   
     </tr>
     <tr *ngFor="let user of userService.users">    
-      <td (click)="populateUser(user)" (mouseenter)="test(user)">{{user.nom}}</td>
-      <td (click)="populateUser(user)" (mouseenter)="test(user)">{{user.prenom}}</td>
-      <td (click)="populateUser(user)"  (mouseenter)="test(user)">{{user.email}}</td>
-      <td>
+      <td (click)="populateUser(user)" >{{user.nom}}</td>
+      <td (click)="populateUser(user)" >{{user.prenom}}</td>
+      <td (click)="populateUser(user)"  >{{user.email}}</td>
+      <td (click)="populateUser(user)">
           <span *ngIf="user.active" class="text-success bg-light rounded px-2"><b>Yes</b></span>
           <span *ngIf="!user.active" class="text-danger bg-light rounded px-2"><b>No</b></span>
       </td>
-      <td>
+      <td (click)="populateUser(user)">
           <div class="btn-toolbar">
               <div class="btn-group" >
                   <button type="button" (click)="disable(user.idUser)" *ngIf="user.active"
