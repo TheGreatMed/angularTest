@@ -35,7 +35,7 @@ pipeline{
            }
            }
        }
-       stage('clean-package-nexus'){
+       stage('push-package-nexus'){
        steps{  
            dir('crud-angular'){
                 bat 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
