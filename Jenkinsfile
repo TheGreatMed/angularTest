@@ -48,7 +48,7 @@ pipeline{
        steps{  
             sshCommand remote: remote, command: "cd ~/Desktop/test; ansible-playbook playbook1.yml"            
         }
-       }
+       } 
 
      }
   }
