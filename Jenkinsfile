@@ -35,13 +35,18 @@ pipeline{
            }
            }
        }
-       stage('clean deploy'){
+       stage('clean-package-nexus'){
        steps{  
            dir('crud-angular'){
                 bat 'mvn deploy --settings settings.xml -Dmaven.test.skip=true'
             }
              sshCommand remote: remote, command: "cd ~/Desktop/test; ansible-playbook playbook1.yml"
                       
+        }
+       }
+       stage('deploy-ubuntu'){
+       steps{  
+            sshCommand remote: remote, command: "cd ~/Desktop/test; ansible-playbook playbook1.yml"            
         }
        }
 
